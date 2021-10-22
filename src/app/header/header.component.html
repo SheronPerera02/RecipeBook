@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" style=" font-weight: bold; font-size: 22px">Recipe Book</a>
+    <button
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      class="navbar-toggler"
+      data-bs-target="#navbarNavAltMarkup"
+      data-bs-toggle="collapse"
+      type="button"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav pl-5">
+        <a
+          [routerLink]="['/recipes']"
+          class="nav-link"
+          routerLinkActive="active"
+          *ngIf="isAuthenticated"
+        >Recipes</a>
+        <a
+          [routerLink]="['/shopping-list']"
+          class="nav-link ml-2"
+          routerLinkActive="active"
+          *ngIf="isAuthenticated"
+        >Shopping List</a>
+      </div>
+
+      <div class="navbar-nav align-content-end">
+        <div class="btn-group">
+          <a
+            class="btn"
+            role="button"
+            *ngIf="isAuthenticated"
+            (click)="onLogout()"
+          >
+            Logout
+          </a>
+          <a
+            [appDropdown]="dropdown"
+            aria-expanded="false"
+            class="btn dropdown-toggle"
+            data-bs-toggle="dropdown"
+            id="dropdownMenuLink"
+            role="button"
+            *ngIf="isAuthenticated"
+          >
+            Manage
+          </a>
+
+          <ul #dropdown class="dropdown-menu">
+            <li><a (click)="onSaveData()" class="dropdown-item">Save Data</a></li>
+            <li><a (click)="onFetchData()" class="dropdown-item">Fetch Data</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div id="myModal" class="modal fade" [ngClass]="{confirming : confirming}">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header flex-column">
+        <div class="icon-box">
+          <i class="material-icons">&#xE879;</i>
+        </div>
+        <h4 class="modal-title w-100">Are you sure?</h4>
+        <button id="closeBtn" type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="onLogoutCancel()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Do you really want to Logout?</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onLogoutCancel()">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="onLogoutConfirmed()">Logout</button>
+      </div>
+    </div>
+  </div>
+</div>

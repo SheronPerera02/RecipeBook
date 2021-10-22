@@ -1,0 +1,85 @@
+<div class="row p-5">
+  <div
+    class="col p-5"
+    style="border-radius: 10px; background-color: whitesmoke"
+  >
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+      <div class="row">
+        <div class="col align-content-end">
+          <div class="form-group">
+            <button [disabled]="form.invalid" class="btn btn-success" type="submit">Save</button>&nbsp;
+            <button (click)="onCancel()" class="btn btn-danger" type="button">Cancel</button>
+          </div>
+          <hr>
+          <div class="form-group">
+            <label>Recipe Name</label>
+            <input class="form-control" formControlName="name" name="name"/>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea
+              class="form-control col"
+              formControlName="description"
+              name="description1"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label>Image Path</label>
+            <input class="form-control" formControlName="imagePath" name="imagePath"/>
+          </div>
+          <div class="form-group">
+            <img
+              *ngIf="form.value.imagePath != ''"
+              [src]="form.value.imagePath"
+              style="border-radius: 10px; height: 200px; width: 300px"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col" formArrayName="ingredients">
+          <span>Ingredients</span>
+          <hr/>
+          <div
+            *ngFor="let ingredient of getIngredients().controls; let i = index"
+            [formGroupName]="i"
+            class="row p-3"
+          >
+            <div class="col-8">
+              <input class="form-control" formControlName="name"/>
+            </div>
+            <div class="col-2">
+              <input
+                class="form-control"
+                formControlName="amount"
+                type="number"
+              />
+            </div>
+            <div class="col-2">
+              <button
+                (click)="onRemove(i)"
+                class="btn btn-danger"
+                type="button"
+              >
+                X
+              </button>
+            </div>
+          </div>
+          <hr *ngIf="getIngredients().length !== 0"/>
+          <div class="row p-3">
+            <div class="col">
+              <button
+                (click)="onAddIngredient()"
+                class="btn btn-outline-primary"
+                type="button"
+              >
+                Add Ingredient
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

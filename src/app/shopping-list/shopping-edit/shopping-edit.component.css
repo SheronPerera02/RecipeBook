@@ -1,0 +1,8 @@
+button{
+  width: 80px;
+}
+
+.btn-delete{
+  position: absolute;
+  right: 10px;
+}

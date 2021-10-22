@@ -1,0 +1,38 @@
+<!--
+<app-alert (close)="onClose()" [message]="errorMessage" *ngIf="errorMessage"></app-alert>
+-->
+<ng-template appHostContainer></ng-template>
+
+<div class="container-fluid" style="position:relative;">
+  <!--
+    <section *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</section>
+    -->
+  <div *ngIf="isLoading" style="text-align: center">
+    <div class="spinner-container">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+  </div>
+  <div class="form-container" *ngIf="!isLoading">
+    <div [ngClass]="{'go-up': !authForm.invalid}">
+      <form #authForm="ngForm" autocomplete="off">
+        <div class="form-group">
+          <input class="form-control" email name="email" ngModel required type="email" placeholder="E-mail">
+        </div>
+        <div class="form-group">
+          <input class="form-control" minlength="6" name="password" ngModel required type="password" placeholder="Password">
+        </div>
+        <br>
+        <div class="form-group">
+          <div [ngClass]="{disabled: authForm.invalid}" class="action-button">
+            <span [ngClass]="{'go-white': authForm.invalid}">Sign-Up | Login</span>
+            <a><i (click)="onSignUp()">Sign Up</i></a>
+            <a><i (click)="onLogin()">Login</i></a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>
+

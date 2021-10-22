@@ -1,0 +1,165 @@
+.container-fluid{
+  height: calc(100vh - 59px);
+}
+
+.container-fluid>div{
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  padding: 30px;
+}
+
+.form-container{
+  background: url("https://media.istockphoto.com/vectors/hand-drawn-food-seamless-pattern-vector-id508011875?b=1&k=6&m=508011875&s=612x612&w=0&h=TF2xe8sD3pQCLFwXOg1360LYR3zXmn_DG80DLsMcU1o=");
+  border-radius: 100%;
+}
+
+.spinner-container{
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  height: max-content;
+  width: max-content;
+}
+
+.form-container>div{
+  height: max-content;
+  width: max-content;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 60px;
+  bottom: 0;
+  margin: auto;
+  transition: 1s;
+}
+
+input{
+  box-shadow: none !important;
+  width: 300px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input{
+  margin-top: 20px;
+}
+
+.form-group{
+  margin-bottom: 0;
+}
+
+/*
+input.ng-invalid.ng-dirty{
+  border: 1px solid #e394d8;
+}
+
+ */
+
+label{
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+}
+
+section{
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 95%;
+  background-color: crimson;
+  color: white;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.action-button {
+  width: 250px;
+  height: 50px;
+  background-color: #dee1e1;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: .3s linear;
+  margin: auto;
+}
+
+.action-button span{
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: max-content;
+  background: #242424;
+  color: white;
+  text-align: center;
+  line-height: 80px;
+  z-index: 999;
+  transition: .5s linear;
+  border-radius: 40px;
+  font-family: 'Raleway', sans-serif;
+
+}
+.action-button:hover span{
+  transform: translateX(-100%);
+  transition-delay: .1s;
+}
+.action-button a {
+  flex: 1;
+  font-size: 15px;
+  color: #2d3436;
+  text-align: center;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: .3s linear;
+  font-family: 'Raleway', sans-serif;
+  margin: auto;
+}
+.action-button:hover a {
+  opacity: 1;
+  transform: translateX(0);
+}
+.action-button a:nth-of-type(1){
+  transition-delay: .6s;
+}
+.action-button a:nth-of-type(2){
+  transition-delay: .4s;
+}
+
+.disabled{
+  pointer-events: none;
+  opacity: 0;
+}
+
+.go-white{
+  background-color: white !important;
+  border: 1px solid #242424;
+  color: black !important;
+}
+
+.go-up{
+  top: 0 !important;
+  transition: 1s;
+}
+
+
+i{
+  font-style: normal;
+}
+

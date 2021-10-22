@@ -1,0 +1,10 @@
+.list-group-item>div{
+    position: absolute;
+    left: 0;
+}
+
+.list-group-item>span{
+    position: absolute;
+    right: 0;
+}
+

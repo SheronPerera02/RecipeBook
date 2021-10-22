@@ -1,0 +1,24 @@
+
+.card {
+  cursor: pointer;
+  width: 325px !important;
+  margin: auto;
+
+}
+
+.active {
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.56);
+  transition: 0.2s;
+}
+
+h5 {
+  font-size: 16px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+}

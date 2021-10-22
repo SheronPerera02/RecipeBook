@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-12">
+        <button class="btn btn-dark" routerLink="new" style="font-family: 'Raleway', sans-serif">New Recipe</button>
+        <hr>
+    </div>
+    <div style="overflow-y: scroll; height: 680px; width: 100%">
+      <div class="col-12">
+        <div class="row">
+          <div class="col">
+            <app-recipe-item
+              [index]="i"
+              *ngFor="let recipe of recipes; let i = index"
+              [recipe]="recipe"
+              class="col-6"
+            ></app-recipe-item>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

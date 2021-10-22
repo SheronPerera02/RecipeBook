@@ -1,0 +1,44 @@
+.card {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  /*background-color: #d4d4d4;*/
+  background-color: #525252;
+  /* box-shadow: 0px 0px 18px 3px rgba(0,0,0,0.56); */
+}
+
+img {
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 75px;
+}
+
+a {
+  cursor: pointer;
+}
+
+.list-group-item {
+  background-color: #525252;
+}
+
+h5, p, li{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.ingredients-list-group>li{
+  border: 1px solid #7d7d7d;
+}
+
+.card-body>ul>li{
+  border-bottom: 1px solid #7d7d7d;
+}
+
+.dropdown-item:active{
+  background-color: unset;
+  color: #242424;
+}

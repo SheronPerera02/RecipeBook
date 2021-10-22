@@ -1,0 +1,16 @@
+<div class="p-3">
+  <div
+    class="card"
+    style="width: 18rem; outline: none"
+    routerLink="{{ index }}"
+    routerLinkActive="active"
+  >
+    <img src="{{ recipe.imagePath }}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ recipe.name }}</h5>
+      <hr>
+      <p class="card-text">{{ recipe.description }}</p>
+    </div>
+  </div>
+
+</div>

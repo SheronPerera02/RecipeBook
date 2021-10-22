@@ -1,0 +1,68 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 50;
+
+
+}
+
+.alert-modal {
+  position: absolute;
+  width: 500px;
+  height: 200px;
+  background-color: white;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.alert-modal-content {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: max-content;
+  height: max-content;
+}
+
+.alert-modal-content > div > img {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.alert-modal-content > div {
+  margin-left: -60px
+}
+
+.alert-modal-content > div:nth-child(2) {
+  min-width: 120px;
+  position: relative;
+  margin-left: 20px;
+}
+
+
+.alert-modal-content > div > p {
+
+  font-family: 'Raleway', sans-serif;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: max-content;
+  height: max-content;
+}
+
+
